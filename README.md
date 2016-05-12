@@ -8,7 +8,8 @@ Katubushi::Client - A client library for katsubushi
     my $client = Katsubushi::Client->new({
         servers => ["127.0.0.1:11212", "10.8.0.1:11212"],
     });
-    $client->fetch;
+    my $id = $client->fetch;
+    my @ids = $client->fetch_multi(3);
 
 # DESCRIPTION
 

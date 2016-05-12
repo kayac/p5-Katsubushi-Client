@@ -7,3 +7,4 @@ on 'test' => sub {
 
 requires 'Mouse';
 requires 'Cache::Memcached::Fast';
+requires 'version', '0.77';

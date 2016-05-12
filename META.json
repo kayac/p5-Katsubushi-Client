@@ -44,7 +44,8 @@
          "requires" : {
             "Cache::Memcached::Fast" : "0",
             "Mouse" : "0",
-            "perl" : "5.008001"
+            "perl" : "5.008001",
+            "version" : "0.77"
          }
       },
       "test" : {
@@ -55,6 +56,17 @@
       }
    },
    "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/kayac/p5-Katsubushi-Client/issues"
+      },
+      "homepage" : "https://github.com/kayac/p5-Katsubushi-Client",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/kayac/p5-Katsubushi-Client.git",
+         "web" : "https://github.com/kayac/p5-Katsubushi-Client"
+      }
+   },
    "version" : "0.1",
    "x_authority" : "cpan:FUJIWARA"
 }
