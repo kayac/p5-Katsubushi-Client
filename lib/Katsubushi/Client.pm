@@ -57,6 +57,24 @@ sub fetch {
     return $id;
 }
 
+sub fetch_multi {
+    my $self = shift;
+    my $n    = shift;
+    my @keys = ( 1 .. $n );
+    my $ids;
+    # retry at once for only main (the first of list) server
+    for my $model ($self->_models->[0], @{$self->_models}) {
+        $ids = $model->get_multi(@keys);
+        last if scalar(values %$ids) == $n;
+    }
+
+    if (scalar values %$ids != $n) {
+        croak "Failed to fetch new $n ids";
+    }
+
+    return map { $ids->{$_} } @keys;
+}
+
 1;
 __END__
 
@@ -72,7 +90,8 @@ Katubushi::Client - A client library for katsubushi
     my $client = Katsubushi::Client->new({
         servers => ["127.0.0.1:11212", "10.8.0.1:11212"],
     });
-    $client->fetch;
+    my $id = $client->fetch;
+    my @ids = $client->fetch_multi(3);
 
 =head1 DESCRIPTION
 
