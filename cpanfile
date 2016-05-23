@@ -5,6 +5,6 @@ on 'test' => sub {
     requires 'Test::TCP';
 };
 
-requires 'Mouse';
+requires 'Class::Tiny';
 requires 'Cache::Memcached::Fast';
 requires 'version', '0.77';

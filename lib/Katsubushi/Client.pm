@@ -4,32 +4,20 @@ use 5.008001;
 use strict;
 use warnings;
 
+our $VERSION = "0.1";
+
 use Cache::Memcached::Fast;
 
 use Carp qw(croak);
-use Mouse;
-
-our $VERSION = "0.1";
-
-has _models => (
-    is      => 'ro',
-    isa     => 'ArrayRef[Cache::Memcached::Fast]',
-    lazy    => 1,
-    default => sub {
+use Class::Tiny +{
+    servers => sub { [] },
+    _models => sub {
         my $self = shift;
-
         return [ map {
             Cache::Memcached::Fast->new({ servers => [ $_ ] });
         } @{$self->servers} ];
     },
-);
-
-has servers => (
-    is  => 'ro',
-    isa => 'ArrayRef[Str]',
-);
-
-no Mouse;
+};
 
 sub BUILD {
     my $self = shift;
