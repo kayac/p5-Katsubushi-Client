@@ -6,3 +6,7 @@ perl:
   - "5.18"
   - "5.20"
 
+before_install:
+  - wget https://github.com/kayac/go-katsubushi/releases/download/v1.1.1/katsubushi-1.1.1-linux-amd64.zip
+  - unzip katsubushi-1.1.1-linux-amd64.zip
+  - sudo install katsubushi /usr/bin
