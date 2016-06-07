@@ -10,7 +10,7 @@ use Cache::Memcached::Fast;
 
 use Carp qw(croak);
 use Class::Tiny +{
-    servers => sub { [] },
+    servers => sub { ["127.0.0.1:11212"] },
     _models => sub {
         my $self = shift;
         return [ map {
