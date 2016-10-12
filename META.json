@@ -4,7 +4,7 @@
       "FUJIWARA Shunichiro <fujiwara.shunichiro@gmail.com>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Minilla/v2.5.0, CPAN::Meta::Converter version 2.150001",
+   "generated_by" : "Minilla/v3.0.4, CPAN::Meta::Converter version 2.150005",
    "license" : [
       "perl_5"
    ],
@@ -68,5 +68,6 @@
       }
    },
    "version" : "0.1",
-   "x_authority" : "cpan:FUJIWARA"
+   "x_authority" : "cpan:FUJIWARA",
+   "x_serialization_backend" : "JSON::PP version 2.27300"
 }
