@@ -4,7 +4,7 @@ use 5.008001;
 use strict;
 use warnings;
 
-our $VERSION = "0.1";
+our $VERSION = "0.2";
 
 use Cache::Memcached::Fast;
 
