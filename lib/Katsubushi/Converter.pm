@@ -38,7 +38,7 @@ sub epoch_msec_to_id {
 
 1;
 
-=head NAME
+=head1 NAME
 
 Katsubushi::Converter - id converter issued by katsubushi
 
